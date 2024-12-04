@@ -1,5 +1,5 @@
 import Image from "next/image";
-import VideoPlayer from './movieCard';
+import VideoPlayer from './moviePlayer';
 
 export default async function Home() {
   const embedUrl = "https://vidsrc.xyz/embed/movie/tt5433140";
