@@ -1,4 +1,5 @@
-export default async function getMovies() {
+
+export async function getMovies() {
   
 const url = 'https://api.themoviedb.org/3/trending/movie/week?language=en-US';
 const options = {
@@ -9,7 +10,6 @@ const options = {
   }
 };
 
-const movies = []; 
 
 const response = await fetch(url, options)
   .then(res => res.json())

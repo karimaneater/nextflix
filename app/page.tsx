@@ -1,23 +1,18 @@
-import Image from "next/image";
-import VideoPlayer from './moviePlayer';
+import MovieCards from './movieCard';
 import LocalMoviesSharpIcon from '@mui/icons-material/LocalMoviesSharp';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import getMovies from "@/lib/data";
+
+import {getMovies} from "@/lib/data";
+
+async function fetchMovies() {
+  const movies = await getMovies();  // Get the list of movies
+  return movies;  // Return the movies data
+}
 
 export default async function Page() {
-  const embedUrl = "https://vidsrc.xyz/embed/movie/1241982";
-  const movies = await getMovies();
-  console.log(movies, "movies page");
+  
+  const movies = await fetchMovies();
+
   return (
-    // <VideoPlayer embedUrl={embedUrl} />
-   
     <div>
        <header>
           <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
@@ -60,28 +55,10 @@ export default async function Page() {
 
 
       <main className="container mx-auto p-6">
-        <h1 className="text-4xl font-bold text-center mb-2">Trending Movies</h1>
-        <div className="grid grid-cols-5 gap-4">
-          {movies.map((movie: any) => ( 
-            <Card key={movie.id}>
-              <CardHeader>
-                <Image
-                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                  alt={movie.title}
-                  width={400}
-                  height={750}
-                />
-              </CardHeader>
-              <CardContent>
-                <CardTitle>{movie.title}</CardTitle>
-                <CardDescription>{movie.overview}</CardDescription>
-              </CardContent>
-              <CardFooter>
-                <span>{movie.release_date}</span>
-              </CardFooter>
-            </Card>
-          ))}
+        <div>
+          {/* {videoUrl && <VideoPlayer embedUrl={videoUrl} />} */}
         </div>
+        <MovieCards movies={movies} />
       </main>
       <footer className=" text-sm/6 bg-gray-800 text-white text-center p-4">
           for educational purposes only! copy right &copy; 2024
