@@ -1,6 +1,6 @@
 const VideoPlayer = ({ embedUrl }: { embedUrl: string }) => {
     return (
-      <div className="aspect-w-16 aspect-h-9 w-full">
+      <div className="w-full">
         <iframe
           src={embedUrl}
           title="Video Player"
