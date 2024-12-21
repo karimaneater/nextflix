@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef  } from "react";
 import Image from "next/image";
 import VideoPlayer from './moviePlayer';
 import {
@@ -26,19 +26,26 @@ type MovieCardsProps = {
 
 export default function MovieCards({ movies }: MovieCardsProps) {
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  
 
   // embedUrl function generates a dynamic URL for the player
   const embedUrl = (id: number): string => `https://vidsrc.xyz/embed/movie/${id}`;
 
   // Handle the click event to set the video URL
   const handleCardClick = (movieId: number) => {
+    window.scroll({ top: 0, left: 0, behavior: 'smooth' });
     const url = embedUrl(movieId); // Generate the embed URL dynamically
     setVideoUrl(url); // Set the video URL to state
+    
   };
+
+  
 
   return (
     <>
-        {videoUrl && <VideoPlayer embedUrl={videoUrl} />} {/* Render video player if URL is set */}
+        <div>
+            {videoUrl && <VideoPlayer embedUrl={videoUrl} />}
+        </div>
         <h1 className="text-4xl font-bold text-center mb-2 pt-2">Trending Movies</h1>
         <div className="grid grid-cols-5 gap-4">
         {movies.map((movie) => (

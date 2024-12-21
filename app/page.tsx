@@ -55,9 +55,6 @@ export default async function Page() {
 
 
       <main className="container mx-auto p-6">
-        <div>
-          {/* {videoUrl && <VideoPlayer embedUrl={videoUrl} />} */}
-        </div>
         <MovieCards movies={movies} />
       </main>
       <footer className=" text-sm/6 bg-gray-800 text-white text-center p-4">
