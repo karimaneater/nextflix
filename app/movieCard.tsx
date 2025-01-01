@@ -53,6 +53,7 @@ export default function MovieCards({ movies }: MovieCardsProps) {
                 onClick={() => {
                     handleCardClick(movie.id);
                 }}
+                className="border rounded-lg overflow-hidden transition transform hover:scale-105 hover:shadow-lg cursor-pointer"
             >
                 <CardHeader> 
                     <Image
