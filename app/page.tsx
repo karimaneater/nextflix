@@ -1,6 +1,6 @@
 import MovieCards from './movieCard';
 import {getMovies} from "@/lib/data";
-
+import PageHeader from './pageHeader';
 
 
 async function fetchMovies() {
@@ -17,6 +17,7 @@ export default async function Page() {
 
   return (
     <div>
+      <PageHeader /> 
       <main className="container mx-auto p-6">
         <MovieCards movies={movies} />
       </main>
