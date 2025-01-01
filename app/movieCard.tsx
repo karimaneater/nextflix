@@ -28,14 +28,14 @@ export default function MovieCards({ movies }: MovieCardsProps) {
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   
 
-  // embedUrl function generates a dynamic URL for the player
+  
   const embedUrl = (id: number): string => `https://vidsrc.xyz/embed/movie/${id}`;
 
-  // Handle the click event to set the video URL
+  
   const handleCardClick = (movieId: number) => {
     window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-    const url = embedUrl(movieId); // Generate the embed URL dynamically
-    setVideoUrl(url); // Set the video URL to state
+    const url = embedUrl(movieId); 
+    setVideoUrl(url); 
     
   };
 

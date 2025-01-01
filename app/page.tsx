@@ -1,11 +1,12 @@
 import MovieCards from './movieCard';
 import LocalMoviesSharpIcon from '@mui/icons-material/LocalMoviesSharp';
-
 import {getMovies} from "@/lib/data";
 
+
+
 async function fetchMovies() {
-  const movies = await getMovies();  // Get the list of movies
-  return movies;  // Return the movies data
+  const movies = await getMovies();  
+  return movies;  
 }
 
 export default async function Page() {
@@ -58,7 +59,7 @@ export default async function Page() {
         <MovieCards movies={movies} />
       </main>
       <footer className=" text-sm/6 bg-gray-800 text-white text-center p-4">
-          for educational purposes only! copy right &copy; {date}
+          for educational purposes only! Copyright &copy; {date} <a href="https://github.com/karimaneater">karimaneater</a>
       </footer>
     </div>
     
