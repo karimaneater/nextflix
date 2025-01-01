@@ -18,4 +18,4 @@ const VideoPlayer = ({ embedUrl }: { embedUrl: any }) => {
     );
   };
   
-  export default VideoPlayer;
+export default VideoPlayer;
