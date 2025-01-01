@@ -47,7 +47,7 @@ export default function MovieCards({ movies }: MovieCardsProps) {
             {videoUrl && <VideoPlayer embedUrl={videoUrl} />}
         </div>
         <h1 className="text-4xl font-bold text-center mb-2 pt-2">Trending Movies</h1>
-        <div className="grid grid-cols-5 gap-4">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {movies.map((movie) => (
             <Card key={movie.id}
                 onClick={() => {

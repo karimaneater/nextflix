@@ -11,7 +11,7 @@ async function fetchMovies() {
 export default async function Page() {
   
   const movies = await fetchMovies();
-
+  const date = new Date().getFullYear();
   return (
     <div>
        <header>
@@ -58,7 +58,7 @@ export default async function Page() {
         <MovieCards movies={movies} />
       </main>
       <footer className=" text-sm/6 bg-gray-800 text-white text-center p-4">
-          for educational purposes only! copy right &copy; 2024
+          for educational purposes only! copy right &copy; {date}
       </footer>
     </div>
     

@@ -1,12 +1,12 @@
 
 export async function getMovies() {
-  
+const apiToken = process.env.API_TOKEN;
 const url = 'https://api.themoviedb.org/3/trending/movie/week?language=en-US';
 const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNGVjNTA2Zjk5ZTdlM2RkYjdjNTAwYWJkZDE5YmEzYSIsIm5iZiI6MTczMzM0Mjk0MS4xNiwic3ViIjoiNjc1MGI2ZGQ4MDEyZjkzZGJjNjliMTk5Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.Va8UzzfHFAM8snvVWjii2UlQ5_GlOaywfldcRuwgZNY'
+    Authorization: `Bearer ${apiToken}`, 
   }
 };
 
