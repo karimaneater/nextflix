@@ -1,4 +1,6 @@
-const VideoPlayer = ({ embedUrl }: { embedUrl: any }) => {
+const VideoPlayer = ({ id }: { id: number }) => {
+  const embedUrl = `https://vidsrc.xyz/embed/movie/${id}`;
+
     return (
       <>
         <h1 className="text-4xl font-bold text-center mb-2 pt-2">Now Playing...</h1>
@@ -11,6 +13,7 @@ const VideoPlayer = ({ embedUrl }: { embedUrl: any }) => {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            className="w-full h-full aspect-video"
           ></iframe>
         </div>
       </>

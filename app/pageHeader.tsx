@@ -28,23 +28,26 @@ export default function PageHeader(){
             <header>
                 <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1">
-                    <a href="#" className="-m-1.5 p-1.5">
+                    <a href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">NextFlix</span>
-                        <span className="h-8 w-auto"> <LocalMoviesSharpIcon /></span>
-                        <label className="text-sm/6 font-semibold ">NextFlix</label>
+                        <span className="h-8 w-auto"> <LocalMoviesSharpIcon /> </span>
+                        <span className="text-sm/6 font-semibold ">NextFlix</span>
                     </a>
                     </div>
                     <div className="flex lg:hidden ">
-                        <button type="button" className="inline-flex items-center justify-center rounded-md p-2.5 cursor-pointer" onClick={toggleMenu}>
+                        {/* <button type="button" className="inline-flex items-center justify-center rounded-md p-2.5 cursor-pointer" onClick={toggleMenu}>
                             <span className="sr-only">Open main menu</span>
-                            {isMenuOpen ? <MenuIcon/> : <CloseIcon />}
-                            
+                            {isMenuOpen ? <MenuIcon/> : <CloseIcon />}               
+                        </button> */}
+                        <button type="button" className="flex items-center gap-x-1 text-sm/6 font-semibold cursor-pointer"  aria-expanded="false" onClick={toggleTheme}>
+                            {isDarkMode ? <NightlightIcon /> : <LightModeIcon />}
                         </button>
                     </div>
-                    <div className="hidden lg:flex lg:gap-x-12">
-                        <a href="#" className="text-sm/6 font-semibold ">Genre</a>
+                    <div className="hidden lg:flex lg:gap-x-12 align-middle">
+                        <a href="/play" className="text-sm/6 font-semibold ">Genre</a>
                         <a href="#" className="text-sm/6 font-semibold ">About</a>
-                        <a href="#" className="text-sm/6 font-semibold ">Contact Us</a>
+                        <a href="#" className="text-sm/6 font-semibold ">Contact</a>
+                       
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
                     {/* <a href="#" className="text-sm/6 font-semibold ">Log in <span aria-hidden="true">&rarr;</span></a> */}
