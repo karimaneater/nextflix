@@ -31,7 +31,7 @@ export default function PageHeader(){
                     <a href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">NextFlix</span>
                         <span className="h-8 w-auto"> <LocalMoviesSharpIcon /> </span>
-                        <span className="text-sm/6 font-semibold ">NextFlix</span>
+                        <span className="text-sm/6 font-semibold ">NEXT<span className="text-red-700">FLIX</span></span>
                     </a>
                     </div>
                     <div className="flex lg:hidden ">
