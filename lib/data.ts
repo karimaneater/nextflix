@@ -47,12 +47,6 @@ export async function getMovieByTitle(title: string) {
   return data.results;
 }
 
-export async function PlayMovie(request: Request) { 
-  const { searchParams } = new URL(request.url);
-  const url = `https://vidsrc.xyz/embed/movie/${searchParams.get("id")}`;
- 
-  return url;
-};
 
 
 

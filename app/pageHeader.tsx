@@ -44,9 +44,9 @@ export default function PageHeader(){
                         </button>
                     </div>
                     <div className="hidden lg:flex lg:gap-x-12 align-middle">
-                        <a href="/play" className="text-sm/6 font-semibold ">Genre</a>
-                        <a href="#" className="text-sm/6 font-semibold ">About</a>
-                        <a href="#" className="text-sm/6 font-semibold ">Contact</a>
+                        <a href="/genre" className="text-sm/6 font-semibold ">Genre</a>
+                        <a href="/about" className="text-sm/6 font-semibold ">About</a>
+                        <a href="/contact" className="text-sm/6 font-semibold ">Contact</a>
                        
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
