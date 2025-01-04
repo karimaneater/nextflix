@@ -1,40 +1,22 @@
 
-let cachedTrendingMovies: Array<any> = [];
-let lastFetchTime: string = '';
-
-async function fetchTrendingMovies() {
-  const apiToken = process.env.API_TOKEN;
-  const url = 'https://api.themoviedb.org/3/trending/movie/week?language=en-US';
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: `Bearer ${apiToken}`,
-    },
-  };
-
-  try {
-    const response = await fetch(url, options);
-    const data = await response.json();
-    cachedTrendingMovies = data.results;
-
-    const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); 
-    const yyyy = today.getFullYear();
-    lastFetchTime = mm + '/' + dd + '/' + yyyy;
-
-  } catch (err) {
-    console.error('Error fetching trending movies:', err);
+export async function getTrendingMovies() {
+const apiToken = process.env.API_TOKEN;
+const url = 'https://api.themoviedb.org/3/trending/movie/week?language=en-US';
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: `Bearer ${apiToken}`, 
   }
-}
+};
 
 
-fetchTrendingMovies();
-setInterval(fetchTrendingMovies, 3000); 
+const response = await fetch(url, options)
+  .then(res => res.json())
+  .then(data => data)
+  .catch(err => console.error(err));
 
-export function getTrendingMovies() {
-  return cachedTrendingMovies;
+  return response.results;
 }
 
 
