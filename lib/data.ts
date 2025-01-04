@@ -31,7 +31,7 @@ async function fetchTrendingMovies() {
 
 
 fetchTrendingMovies();
-setInterval(fetchTrendingMovies, 3600000); 
+setInterval(fetchTrendingMovies, 3000); 
 
 export function getTrendingMovies() {
   return cachedTrendingMovies;
